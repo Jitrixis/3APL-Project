@@ -7,21 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F062A2111C8F5B21002BA017 /* where-s-cage1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F062A20F1C8F5B21002BA017 /* where-s-cage1.jpg */; };
+		F062A2121C8F5B21002BA017 /* where-s-cage2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F062A2101C8F5B21002BA017 /* where-s-cage2.jpg */; };
+		F062A2141C8F5BCA002BA017 /* cage.png in Resources */ = {isa = PBXBuildFile; fileRef = F062A2131C8F5BCA002BA017 /* cage.png */; };
+		F062A2161C8F5D99002BA017 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F062A2151C8F5D99002BA017 /* Images.xcassets */; };
+		F0BA7CF11C8F5EB40009BC90 /* cage-1.png in Resources */ = {isa = PBXBuildFile; fileRef = F0BA7CED1C8F5EB40009BC90 /* cage-1.png */; };
+		F0BA7CF31C8F5EB40009BC90 /* cage-3.png in Resources */ = {isa = PBXBuildFile; fileRef = F0BA7CEF1C8F5EB40009BC90 /* cage-3.png */; };
+		F0BA7CF81C8F5FAE0009BC90 /* cage-2.png in Resources */ = {isa = PBXBuildFile; fileRef = F0BA7CF61C8F5FAE0009BC90 /* cage-2.png */; };
+		F0BA7CF91C8F5FAE0009BC90 /* cage-4.png in Resources */ = {isa = PBXBuildFile; fileRef = F0BA7CF71C8F5FAE0009BC90 /* cage-4.png */; };
 		F0E32AF31C8F5467004B76E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E32AF21C8F5467004B76E0 /* AppDelegate.swift */; };
 		F0E32AF51C8F5467004B76E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E32AF41C8F5467004B76E0 /* ViewController.swift */; };
 		F0E32AF81C8F5467004B76E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E32AF61C8F5467004B76E0 /* Main.storyboard */; };
 		F0E32AFB1C8F5467004B76E0 /* CageGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0E32AF91C8F5467004B76E0 /* CageGame.xcdatamodeld */; };
-		F0E32AFD1C8F5467004B76E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0E32AFC1C8F5467004B76E0 /* Assets.xcassets */; };
 		F0E32B001C8F5467004B76E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E32AFE1C8F5467004B76E0 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F062A20F1C8F5B21002BA017 /* where-s-cage1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "where-s-cage1.jpg"; sourceTree = "<group>"; };
+		F062A2101C8F5B21002BA017 /* where-s-cage2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "where-s-cage2.jpg"; sourceTree = "<group>"; };
+		F062A2131C8F5BCA002BA017 /* cage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cage.png; sourceTree = "<group>"; };
+		F062A2151C8F5D99002BA017 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F0BA7CED1C8F5EB40009BC90 /* cage-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cage-1.png"; sourceTree = "<group>"; };
+		F0BA7CEF1C8F5EB40009BC90 /* cage-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cage-3.png"; sourceTree = "<group>"; };
+		F0BA7CF61C8F5FAE0009BC90 /* cage-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cage-2.png"; sourceTree = "<group>"; };
+		F0BA7CF71C8F5FAE0009BC90 /* cage-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cage-4.png"; sourceTree = "<group>"; };
 		F0E32AEF1C8F5467004B76E0 /* CageGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CageGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E32AF21C8F5467004B76E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0E32AF41C8F5467004B76E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F0E32AF71C8F5467004B76E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F0E32AFA1C8F5467004B76E0 /* CageGame.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CageGame.xcdatamodel; sourceTree = "<group>"; };
-		F0E32AFC1C8F5467004B76E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0E32AFF1C8F5467004B76E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0E32B011C8F5467004B76E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -37,6 +51,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F062A20E1C8F5B08002BA017 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				F062A20F1C8F5B21002BA017 /* where-s-cage1.jpg */,
+				F062A2101C8F5B21002BA017 /* where-s-cage2.jpg */,
+				F062A2131C8F5BCA002BA017 /* cage.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		F0BA7CF51C8F5EB90009BC90 /* appicon */ = {
+			isa = PBXGroup;
+			children = (
+				F0BA7CEF1C8F5EB40009BC90 /* cage-3.png */,
+				F0BA7CF61C8F5FAE0009BC90 /* cage-2.png */,
+				F0BA7CF71C8F5FAE0009BC90 /* cage-4.png */,
+				F0BA7CED1C8F5EB40009BC90 /* cage-1.png */,
+			);
+			name = appicon;
+			sourceTree = "<group>";
+		};
 		F0E32AE61C8F5467004B76E0 = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +91,15 @@
 		F0E32AF11C8F5467004B76E0 /* CageGame */ = {
 			isa = PBXGroup;
 			children = (
+				F0BA7CF51C8F5EB90009BC90 /* appicon */,
+				F062A20E1C8F5B08002BA017 /* images */,
 				F0E32AF21C8F5467004B76E0 /* AppDelegate.swift */,
 				F0E32AF41C8F5467004B76E0 /* ViewController.swift */,
 				F0E32AF61C8F5467004B76E0 /* Main.storyboard */,
-				F0E32AFC1C8F5467004B76E0 /* Assets.xcassets */,
 				F0E32AFE1C8F5467004B76E0 /* LaunchScreen.storyboard */,
 				F0E32B011C8F5467004B76E0 /* Info.plist */,
 				F0E32AF91C8F5467004B76E0 /* CageGame.xcdatamodeld */,
+				F062A2151C8F5D99002BA017 /* Images.xcassets */,
 			);
 			path = CageGame;
 			sourceTree = "<group>";
@@ -125,8 +162,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F062A2141C8F5BCA002BA017 /* cage.png in Resources */,
+				F0BA7CF11C8F5EB40009BC90 /* cage-1.png in Resources */,
+				F0BA7CF31C8F5EB40009BC90 /* cage-3.png in Resources */,
+				F062A2111C8F5B21002BA017 /* where-s-cage1.jpg in Resources */,
+				F0BA7CF91C8F5FAE0009BC90 /* cage-4.png in Resources */,
 				F0E32B001C8F5467004B76E0 /* LaunchScreen.storyboard in Resources */,
-				F0E32AFD1C8F5467004B76E0 /* Assets.xcassets in Resources */,
+				F062A2161C8F5D99002BA017 /* Images.xcassets in Resources */,
+				F0BA7CF81C8F5FAE0009BC90 /* cage-2.png in Resources */,
+				F062A2121C8F5B21002BA017 /* where-s-cage2.jpg in Resources */,
 				F0E32AF81C8F5467004B76E0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,7 +294,7 @@
 		F0E32B051C8F5467004B76E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = CageIcon;
 				INFOPLIST_FILE = CageGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.jitrixis.swift.CageGame;
@@ -261,7 +305,7 @@
 		F0E32B061C8F5467004B76E0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = CageIcon;
 				INFOPLIST_FILE = CageGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.jitrixis.swift.CageGame;
@@ -288,6 +332,7 @@
 				F0E32B061C8F5467004B76E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
