@@ -1,15 +1,16 @@
 //
-//  TestController.swift
+//  GameSelectViewController.swift
 //  CageGame
 //
 //  Created by Julien Gardet on 13/03/2016.
 //  Copyright © 2016 Julien Gardet. All rights reserved.
 //
 
+
 import UIKit
 import CoreData
 
-class TestViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class GameSelectViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     var managedObjectContext: NSManagedObjectContext!
     
@@ -20,8 +21,10 @@ class TestViewController: UITableViewController, NSFetchedResultsControllerDeleg
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         self.managedObjectContext = appDelegate.managedObjectContext
         
-        if self.fetchedResultsController.sections![0].numberOfObjects != 0 {
-            _ = insertNewObject("alskdjf")
+        if self.fetchedResultsController.sections![0].numberOfObjects == 0 {
+            //Default images
+            _ = insertNewObject("Cage in an orchestra", uri: "where-s-cage1.jpg", cageX: 143, cageY: 346, cageW: 7, cageH: 11)
+            _ = insertNewObject("Cage in the crowd", uri: "where-s-cage2.jpg", cageX: 198, cageY: 269, cageW: 5, cageH: 8)
         }
         
     }
@@ -33,10 +36,15 @@ class TestViewController: UITableViewController, NSFetchedResultsControllerDeleg
     
     // MARK : Insert Entity
     
-    func insertNewObject(name: String) {
+    func insertNewObject(name: String, uri: String, cageX: Int, cageY: Int, cageW: Int, cageH: Int) {
         let context = self.fetchedResultsController.managedObjectContext
-        let newManagedObject = NSEntityDescription.insertNewObjectForEntityForName("Test", inManagedObjectContext: context)
+        let newManagedObject = NSEntityDescription.insertNewObjectForEntityForName("Image", inManagedObjectContext: context)
         newManagedObject.setValue(name, forKey: "name")
+        newManagedObject.setValue(uri, forKey: "uri")
+        newManagedObject.setValue(cageX, forKey: "cageX")
+        newManagedObject.setValue(cageY, forKey: "cageY")
+        newManagedObject.setValue(cageW, forKey: "cageW")
+        newManagedObject.setValue(cageH, forKey: "cageH")
         
         // Save the context.
         do {
@@ -79,7 +87,7 @@ class TestViewController: UITableViewController, NSFetchedResultsControllerDeleg
         let fetchRequest = NSFetchRequest()
         
         //Select Entity
-        let entity = NSEntityDescription.entityForName("Test", inManagedObjectContext: self.managedObjectContext!)
+        let entity = NSEntityDescription.entityForName("Image", inManagedObjectContext: self.managedObjectContext!)
         fetchRequest.entity = entity
         
         //Limit Fetch
@@ -143,10 +151,10 @@ class TestViewController: UITableViewController, NSFetchedResultsControllerDeleg
     // MARK: Send Data to Segues
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showDet" {
+        if segue.identifier == "playImage" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let object = self.fetchedResultsController.objectAtIndexPath(indexPath)
-                let controller = segue.destinationViewController as! DetailViewController
+                let controller = segue.destinationViewController as! GamePlayViewController
                 controller.detailItem = object
             }
         }

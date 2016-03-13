@@ -13,6 +13,8 @@
 		F062A2161C8F5D99002BA017 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F062A2151C8F5D99002BA017 /* Images.xcassets */; };
 		F0A8A2991C95ADC400AB2995 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A8A2981C95ADC400AB2995 /* TestViewController.swift */; };
 		F0A8A2BB1C95D9B800AB2995 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A8A2BA1C95D9B800AB2995 /* DetailViewController.swift */; };
+		F0A8A2BD1C9602AC00AB2995 /* GameSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A8A2BC1C9602AC00AB2995 /* GameSelectViewController.swift */; };
+		F0A8A2BF1C96058500AB2995 /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A8A2BE1C96058500AB2995 /* GamePlayViewController.swift */; };
 		F0BA7CF11C8F5EB40009BC90 /* cage-1.png in Resources */ = {isa = PBXBuildFile; fileRef = F0BA7CED1C8F5EB40009BC90 /* cage-1.png */; };
 		F0BA7CF31C8F5EB40009BC90 /* cage-3.png in Resources */ = {isa = PBXBuildFile; fileRef = F0BA7CEF1C8F5EB40009BC90 /* cage-3.png */; };
 		F0BA7CF81C8F5FAE0009BC90 /* cage-2.png in Resources */ = {isa = PBXBuildFile; fileRef = F0BA7CF61C8F5FAE0009BC90 /* cage-2.png */; };
@@ -31,6 +33,8 @@
 		F062A2151C8F5D99002BA017 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F0A8A2981C95ADC400AB2995 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		F0A8A2BA1C95D9B800AB2995 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F0A8A2BC1C9602AC00AB2995 /* GameSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSelectViewController.swift; sourceTree = "<group>"; };
+		F0A8A2BE1C96058500AB2995 /* GamePlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
 		F0BA7CED1C8F5EB40009BC90 /* cage-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cage-1.png"; sourceTree = "<group>"; };
 		F0BA7CEF1C8F5EB40009BC90 /* cage-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cage-3.png"; sourceTree = "<group>"; };
 		F0BA7CF61C8F5FAE0009BC90 /* cage-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cage-2.png"; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 				F0E32AF21C8F5467004B76E0 /* AppDelegate.swift */,
 				F0E32AF41C8F5467004B76E0 /* ViewController.swift */,
 				F0E32AF61C8F5467004B76E0 /* Main.storyboard */,
+				F0A8A2BE1C96058500AB2995 /* GamePlayViewController.swift */,
+				F0A8A2BC1C9602AC00AB2995 /* GameSelectViewController.swift */,
 				F0E32AFE1C8F5467004B76E0 /* LaunchScreen.storyboard */,
 				F0E32B011C8F5467004B76E0 /* Info.plist */,
 				F0E32AF91C8F5467004B76E0 /* CageGame.xcdatamodeld */,
@@ -190,6 +196,8 @@
 			files = (
 				F0E32AF51C8F5467004B76E0 /* ViewController.swift in Sources */,
 				F0E32AF31C8F5467004B76E0 /* AppDelegate.swift in Sources */,
+				F0A8A2BD1C9602AC00AB2995 /* GameSelectViewController.swift in Sources */,
+				F0A8A2BF1C96058500AB2995 /* GamePlayViewController.swift in Sources */,
 				F0A8A2BB1C95D9B800AB2995 /* DetailViewController.swift in Sources */,
 				F0E32AFB1C8F5467004B76E0 /* CageGame.xcdatamodeld in Sources */,
 				F0A8A2991C95ADC400AB2995 /* TestViewController.swift in Sources */,
