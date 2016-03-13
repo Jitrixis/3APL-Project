@@ -15,16 +15,54 @@ class GamePlayViewController: UIViewController {
     @IBOutlet weak var gameTimer: UINavigationItem!
     @IBOutlet weak var gameImage: UIImageView!
     
+    var timer = NSTimer()
+    var counter = 0
+    var lastClickAt = -2
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
-        print("me")
+        
+        self.startTimer()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("bgObserver"), name:UIApplicationDidEnterBackgroundNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("fgObserver"), name:UIApplicationWillEnterForegroundNotification, object: nil)
+
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    
+    // MARK : Timer handler
+    
+    func updateCounter() {
+        counter++
+        gameTimer.title = String("Timer : \(counter) s.")
+        if self.counter - self.lastClickAt <= 2 {
+            self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.orangeColor()]
+        }else{
+            self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.blackColor()]
+        }
+    }
+    
+    func fgObserver(){
+        self.startTimer()
+    }
+    
+    func bgObserver(){
+        self.pauseTimer()
+    }
+    
+    func startTimer(){
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateCounter"), userInfo: nil, repeats: true)
+    }
+    
+    func pauseTimer(){
+        timer.invalidate()
     }
     
     // MARK : Retrieve passed data
@@ -54,10 +92,23 @@ class GamePlayViewController: UIViewController {
         let cageX2 = self.detailItem?.valueForKey("cageX") as! Int + (self.detailItem?.valueForKey("cageW") as! Int)
         let cageY2 = self.detailItem?.valueForKey("cageY") as! Int + (self.detailItem?.valueForKey("cageH") as! Int)
         
+        // 2 sec tap
+        if self.counter - self.lastClickAt <= 2 {
+            return
+        }
+        
         if cageX1 <= Int(click.x) && Int(click.x) <= cageX2 && cageY1 <= Int(click.y) && Int(click.y) <= cageY2{
-            let alertController = UIAlertController(title: nil, message: "You win !", preferredStyle: .Alert)
+            //WIN
+            self.pauseTimer()
+            
+            let alertController = UIAlertController(title: nil, message: "You win in \(counter) seconds !", preferredStyle: .Alert)
             alertController.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: { _ in }))
             self.presentViewController(alertController, animated: true, completion: nil)
+            
+            //TODO Record
+        }else{
+            self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.orangeColor()]
+            self.lastClickAt = self.counter
         }
     }
     
