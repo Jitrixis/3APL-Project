@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreData
 
-class GamePlayViewController: UIViewController {
+class GamePlayViewController: UIViewController, NSFetchedResultsControllerDelegate {
     
     // MARK : Outlets
     
@@ -19,9 +20,14 @@ class GamePlayViewController: UIViewController {
     var counter = 0
     var lastClickAt = -2
     
+    var managedObjectContext: NSManagedObjectContext!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        self.managedObjectContext = appDelegate.managedObjectContext
+        
         self.configureView()
         
         self.startTimer()
@@ -97,15 +103,27 @@ class GamePlayViewController: UIViewController {
             return
         }
         
+        //WIN
         if cageX1 <= Int(click.x) && Int(click.x) <= cageX2 && cageY1 <= Int(click.y) && Int(click.y) <= cageY2{
-            //WIN
+            //Stop Timer
             self.pauseTimer()
             
+            //Display
             let alertController = UIAlertController(title: nil, message: "You win in \(counter) seconds !", preferredStyle: .Alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: { _ in }))
+            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+                //Save Score
+                let textField = alertController.textFields![0] as UITextField
+                print(textField.text)
+                //self.insertNewObject(textField.text!, score: self.counter)
+                
+                //Go Back Game
+                let secondViewController = self.storyboard?.instantiateViewControllerWithIdentifier("GameSelect") as! GameSelectViewController
+                self.navigationController?.showViewController(secondViewController, sender: nil)
+            }))
+            alertController.addTextFieldWithConfigurationHandler({ (textField) -> Void in
+                textField.placeholder = "Username"
+            })
             self.presentViewController(alertController, animated: true, completion: nil)
-            
-            //TODO Record
         }else{
             self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.orangeColor()]
             self.lastClickAt = self.counter
@@ -131,6 +149,25 @@ class GamePlayViewController: UIViewController {
         }
     }
     
-    // MARK
+    // MARK : Save score
+    
+    
+    // MARK : Insert Entity
+    
+    func insertNewObject(player: String, score: Int) {
+        let context = self.managedObjectContext
+        let newManagedObject = NSEntityDescription.insertNewObjectForEntityForName("Score", inManagedObjectContext: context)
+        newManagedObject.setValue(player, forKey: "player")
+        newManagedObject.setValue(score, forKey: "score")
+        
+        newManagedObject.mutableSetValueForKey("image").addObject(self.detailItem!)
+        
+        // Save the context.
+        do {
+            try context.save()
+        } catch {
+            abort()
+        }
+    }
     
 }
