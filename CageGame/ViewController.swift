@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //imgv.image = UIImage(named: "where-s-cage2.jpg")
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,7 +26,6 @@ class ViewController: UIViewController {
     
     @IBAction
     func handleTap(gestureRecognizer: UIGestureRecognizer) {
-        gestureRecognizer.locationInView(self.view)
         let alertController = UIAlertController(title: nil, message: "You tapped at \(gestureRecognizer.locationInView(self.imgv))", preferredStyle: .Alert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: { _ in }))
         self.presentViewController(alertController, animated: true, completion: nil)

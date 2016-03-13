@@ -115,6 +115,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="TPu-ab-WBd" kind="show" id="Fdp-6X-rbz"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -128,7 +131,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iM1-XK-11z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="825" y="-444"/>
+            <point key="canvasLocation" x="857" y="-458"/>
         </scene>
         <!--Timer : 1 min. 36 sec.-->
         <scene sceneID="tne-QT-ifu">
@@ -183,6 +186,76 @@
                 </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1697" y="-746"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="Ot3-im-9ED">
+            <objects>
+                <viewController id="AYw-Eo-thf" customClass="DetailViewController" customModule="CageGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3SW-Md-WcG"/>
+                        <viewControllerLayoutGuide type="bottom" id="o6a-IU-wm6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dsd-ok-eWT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8z-Hf-EaW">
+                                <rect key="frame" x="238" y="225" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="detailLabel" destination="r8z-Hf-EaW" id="jLW-LX-xW8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Cx-wm-vOa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1355" y="927"/>
+        </scene>
+        <!--Core Data-->
+        <scene sceneID="iAi-gD-8wk">
+            <objects>
+                <tableViewController id="TPu-ab-WBd" customClass="TestViewController" customModule="CageGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="YzK-4m-1ck">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="n7d-zp-gTj" style="IBUITableViewCellStyleDefault" id="xmr-Y6-TnM">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xmr-Y6-TnM" id="eXN-xE-uOb">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n7d-zp-gTj">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="AYw-Eo-thf" kind="showDetail" identifier="showDet" id="VnF-Ba-Ba6"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="TPu-ab-WBd" id="cmm-nJ-dc1"/>
+                            <outlet property="delegate" destination="TPu-ab-WBd" id="Mx0-CE-Asz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Core Data" id="BFA-De-U9p"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Chn-ns-6CF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1657" y="125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sq5-57-Mff">

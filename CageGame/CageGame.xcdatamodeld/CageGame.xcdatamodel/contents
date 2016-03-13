@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Automatic">
+    <entity name="Image" syncable="YES">
+        <attribute name="cageH" attributeType="Integer 32" minValueString="0" defaultValueString="0" syncable="YES"/>
+        <attribute name="cageW" attributeType="Integer 32" minValueString="0" defaultValueString="0" syncable="YES"/>
+        <attribute name="cageX" attributeType="Integer 32" minValueString="0" defaultValueString="0" syncable="YES"/>
+        <attribute name="cageY" attributeType="Integer 32" minValueString="0" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="uri" attributeType="String" syncable="YES"/>
+        <relationship name="scores" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Score" inverseName="image" inverseEntity="Score" syncable="YES"/>
+    </entity>
+    <entity name="Score" syncable="YES">
+        <attribute name="player" attributeType="String" minValueString="3" syncable="YES"/>
+        <attribute name="score" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="image" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="scores" inverseEntity="Image" syncable="YES"/>
+    </entity>
+    <entity name="Test" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Score" positionX="252" positionY="-18" width="128" height="90"/>
+        <element name="Image" positionX="252" positionY="0" width="128" height="150"/>
+        <element name="Test" positionX="270" positionY="63" width="128" height="60"/>
+    </elements>
 </model>
